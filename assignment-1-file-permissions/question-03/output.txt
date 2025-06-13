@@ -1,0 +1,13 @@
+/home/kanishk/terminal_practice
+home.txt
+people/
+shared/
+/home/kanishk/terminal_practice/people/marketing
+total 0
+-rw-r--r-- 1 kanishk kanishk 0 Jun  8 19:15 marketing.txt
+/home/kanishk/terminal_practice/people/developers
+total 0
+-rw-r--r-- 1 kanishk kanishk 0 Jun  8 19:15 dev.txt
+/home/kanishk/terminal_practice/shared
+total 0
+-rw-r--r-- 1 kanishk kanishk 0 Jun  8 19:15 dev.txt

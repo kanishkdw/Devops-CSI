@@ -1,0 +1,13 @@
+Initialized empty Git repository in /home/kanishk/git-remotes/my-remote-repo.git/
+Initialized empty Git repository in /home/kanishk/assignment-1-file-permissions/question-07/local-repo/.git/
+[main (root-commit) 7b4ee99] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+HEAD
+branches
+config
+description
+hooks
+info
+objects
+refs
