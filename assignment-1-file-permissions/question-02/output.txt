@@ -1,0 +1,37 @@
+/home/kanishk/assignment-1-file-permissions/question-02
+mydir: directory
+total 12
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 18:11 explanation.md
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 mydir
+-rw-r--r-- 1 kanishk kanishk   73 Jun  8 19:11 output.txt
+-rwxr-xr-x 1 kanishk kanishk  280 Jun  8 19:11 script.sh
+total 12
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 dir1
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 dir2
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 dir3
+.:
+dir1
+dir2
+dir3
+dir4
+
+./dir1:
+
+./dir2:
+
+./dir3:
+
+./dir4:
+subdir1
+
+./dir4/subdir1:
+total 16
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 dir1
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 dir2
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 19:11 dir3
+drwxr-xr-x 3 kanishk kanishk 4096 Jun  8 19:11 dir4
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 19:11 file1
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 19:11 file2
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 19:11 file3
+total 0
+-rw-r--r-- 1 kanishk kanishk 0 Jun  8 19:11 file4

@@ -1,0 +1,16 @@
+/home/kanishk/assignment-1-file-permissions/question-05/linux_practice
+total 4
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 20:10 file1.txt
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 20:10 file2.txt
+-rw-r--r-- 1 kanishk kanishk    0 Jun  8 20:10 file3.log
+drwxr-xr-x 2 kanishk kanishk 4096 Jun  8 20:10 subfolder
+Sun Jun  8 20:10:03 IST 2025
+kanishk
+Linux LAPTOP-DQON54CV 6.6.87.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Apr 21 17:08:54 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+./subfolder/copied_file2.txt
+./renamed_file1.txt
+./file2.txt
+0 0 0 file3.log
+Linux is powerful
+Linux is fast
+Linux supports scripting

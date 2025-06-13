@@ -1,0 +1,6 @@
+Initial permissions:
+-rw-r--r-- 1 kanishk kanishk 50 Jun  8 19:00 myfile.txt
+Updated permissions (chmod 754):
+-rwxr-xr-- 1 kanishk kanishk 50 Jun  8 19:00 myfile.txt
+Final permissions (symbolic changes applied):
+-rwxr-xr-x 1 kanishk kanishk 50 Jun  8 19:00 myfile.txt

@@ -1,0 +1,5 @@
+rm 'question-09/temp.txt'
+[feature-branch e749eb7] Remove temp.txt file from repo
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 question-09/temp.txt
+temp.txt removed from remote repo.
