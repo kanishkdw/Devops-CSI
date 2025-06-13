@@ -1,12 +1,15 @@
-# Assignment 1: File Permissions and Shell Scripting
+# DevOps Internship Assignments - Celebal Technologies
 
-This repository contains answers to 12 shell scripting questions based on Linux file permissions.
+## Assignment 1: File Permissions and Shell Scripting
+
+This repository contains answers to 12 shell scripting questions.
 
 Each question folder includes:
 - `script.sh` – Bash script for the solution
 - `explanation.md` – What the script does
-- `output.txt` – Terminal output of script execution
 
-## Structure
+## Folder Structure
 
+- assignment-1-file-permissions/
+- assignment-2-linux-networking/
 
