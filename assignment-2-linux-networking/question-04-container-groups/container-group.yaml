@@ -1,0 +1,33 @@
+apiVersion: 2021-09-01
+location: eastus
+name: mycontainergroup
+properties:
+  containers:
+    - name: webapp
+      properties:
+        image: mcr.microsoft.com/azuredocs/aci-helloworld
+        ports:
+          - port: 80
+        resources:
+          requests:
+            cpu: 1
+            memoryInGb: 1
+    - name: sidecar
+      properties:
+        image: busybox
+        command:
+          - /bin/sh
+          - -c
+          - while true; do echo Sidecar running...; sleep 5; done
+        resources:
+          requests:
+            cpu: 0.5
+            memoryInGb: 0.5
+  osType: Linux
+  ipAddress:
+    type: Public
+    dnsNameLabel: kanishkcontainergroupdemo
+    ports:
+      - protocol: tcp
+        port: 80
+type: Microsoft.ContainerInstance/containerGroups
