@@ -1,0 +1,6 @@
+Simulating: chown user02 file1
+Simulating: chown :groupA file1
+Simulating: chown user02:groupA file2
+Simulating: chgrp groupB file1
+Simulating: chown -R user01:groupA Resources
+Simulating: userdel user01, user02 and groupdel groupA, groupB

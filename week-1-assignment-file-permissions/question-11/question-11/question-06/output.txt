@@ -1,0 +1,14 @@
+Initialized empty Git repository in /home/kanishk/assignment-1-file-permissions/question-06/git_practice/.git/
+[main (root-commit) f0dd4eb] Initial commit: added demo.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo.txt
+Simulating: git push origin main
+Simulating: git pull origin main
+user.name=Kanishk Dwivedi
+user.email=kanishkdwivedi6104@gmail.com
+credential.helper=store
+init.defaultbranch=main
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
