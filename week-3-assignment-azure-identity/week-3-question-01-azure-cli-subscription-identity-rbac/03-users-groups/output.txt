@@ -1,0 +1,6 @@
+az ad user create \
+  --display-name "Test User" \
+  --password 'StrongP@ssw0rd!' \
+  --user-principal-name testuser1@mujmanipal.onmicrosoft.com
+
+Insufficient privileges to complete the operation.
