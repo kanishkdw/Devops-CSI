@@ -1,0 +1,3 @@
+Name                  CloudName    SubscriptionId                        TenantId                              State    IsDefault
+--------------------  -----------  ------------------------------------  ------------------------------------  -------  -----------
+Azure subscription 1  AzureCloud   da9b6322-0700-4ef5-b8f3-27366a512e2a  27282fdd-4c0b-4dfb-ba91-228cd83fdf71  Enabled  True
