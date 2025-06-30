@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    restart: always
+
+  app:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    command: ["node", "index.js"]
+    depends_on:
+      - web
