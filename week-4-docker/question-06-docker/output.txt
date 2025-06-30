@@ -1,0 +1,17 @@
+$ docker network create --driver bridge custom-bridge
+custom-bridge
+
+$ docker network ls
+NETWORK ID     NAME             DRIVER    SCOPE
+f87d28d31b56   bridge           bridge    local
+d1b7a7e3b03a   custom-bridge    bridge    local
+
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  NAMES
+db2c6fa1ad2d   nginx     "/docker-entrypoint.…"   container1
+d9211a1bc59f   alpine    "sh"                      container2
+
+$ docker exec -it container2 ping -c 4 container1
+PING container1 (172.18.0.2): 56 data bytes
+64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.097 ms
+...
