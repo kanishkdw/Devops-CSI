@@ -1,0 +1,9 @@
+# Get AKS credentials
+az aks get-credentials --resource-group DevopsRG --name devops-aks-cluster
+
+# Launch dashboard
+kubectl proxy
+
+# Apply role and binding
+kubectl apply -f role.yaml
+kubectl apply -f rolebinding.yaml
