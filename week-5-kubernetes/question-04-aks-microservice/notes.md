@@ -1,0 +1,3 @@
+- AKS can expose apps using LoadBalancer to create a public IP address.
+- Microservices should be packaged into containers (Docker images).
+- The deployment manages scaling, while the service handles networking.
