@@ -1,0 +1,27 @@
+
+---
+
+### 📄 File 2: `health-probes.yaml`
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: health-probe-pod
+spec:
+  containers:
+  - name: sample-container
+    image: nginx
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
