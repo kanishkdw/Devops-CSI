@@ -1,0 +1,75 @@
+trigger:
+- main
+
+variables:
+  VM_HOST: '<your_vm_public_ip>'
+  VM_USER: 'azureuser'
+  APP_DIR: '/var/www/reactapp'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildReactApp
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+        npm run build
+      displayName: 'Build React App'
+
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: 'build'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: 'reactapp'
+
+- stage: Deploy
+  dependsOn: Build
+  jobs:
+  - job: DeployToVM
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: DownloadBuildArtifacts@0
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'reactapp'
+        downloadPath: '$(Pipeline.Workspace)'
+
+    - task: InstallSSHKey@0
+      inputs:
+        sshPublicKey: ''
+        sshKeySecureFile: 'react-vm-key'
+        knownHostsEntry: '$(VM_HOST)'
+
+    - script: |
+        ssh -o StrictHostKeyChecking=no $(VM_USER)@$(VM_HOST) << EOF
+          sudo rm -rf $(APP_DIR)
+          sudo mkdir -p $(APP_DIR)
+          exit
+        EOF
+      displayName: 'Clean old app files'
+
+    - script: |
+        scp -o StrictHostKeyChecking=no -r $(Pipeline.Workspace)/reactapp/* $(VM_USER)@$(VM_HOST):$(APP_DIR)
+      displayName: 'Copy new app to VM'
+
+    - script: |
+        ssh -o StrictHostKeyChecking=no $(VM_USER)@$(VM_HOST) << EOF
+          sudo cp -r $(APP_DIR)/* /var/www/html/
+          sudo systemctl restart nginx
+          exit
+        EOF
+      displayName: 'Move app to NGINX directory and restart server'
