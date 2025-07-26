@@ -1,0 +1,19 @@
+trigger:
+- main
+
+variables:
+  buildConfig: 'Release'
+  environment: 'Development'
+
+jobs:
+- job: BuildJob
+  displayName: 'Build Stage'
+  steps:
+    - script: echo "Build configuration is: $(buildConfig)"
+      displayName: 'Display Build Config'
+    
+    - script: echo "Environment is: $(environment)"
+      displayName: 'Display Environment'
+
+    - script: echo "Pipeline run triggered by: $(Build.Reason)"
+      displayName: 'Built-in Variable Example'
