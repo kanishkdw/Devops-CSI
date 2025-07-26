@@ -1,0 +1,1 @@
+Created a YAML pipeline in Azure DevOps that uses both custom and built-in variables to control and log pipeline behavior. Demonstrates usage of $(buildConfig), $(environment), and $(Build.Reason).
