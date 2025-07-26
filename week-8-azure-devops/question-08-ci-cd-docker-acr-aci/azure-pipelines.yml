@@ -1,0 +1,41 @@
+trigger:
+  - main
+
+variables:
+  imageName: 'acitestapp'
+
+stages:
+- stage: BuildAndPush
+  jobs:
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR_Service_Connection'
+        repository: '$(imageName)'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: latest
+
+- stage: DeployACI
+  dependsOn: BuildAndPush
+  jobs:
+  - job: Deploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: |
+        az login --service-principal -u $(azureClientId) -p $(azureClientSecret) --tenant $(azureTenantId)
+        az container create \
+          --resource-group my-resource-group \
+          --name aci-demo \
+          --image myacrdemo.azurecr.io/acitestapp:latest \
+          --dns-name-label aci-demo-kanishk \
+          --ports 80 \
+          --registry-login-server myacrdemo.azurecr.io \
+          --registry-username $(acrUsername) \
+          --registry-password $(acrPassword) \
+          --location centralindia
+      displayName: Deploy to Azure Container Instance
