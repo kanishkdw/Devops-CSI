@@ -1,0 +1,1 @@
+Configured Azure DevOps dashboard by creating work items, building a filtered query, and using widgets to visualize results. This provides better visibility into task distribution and project progress across the team.
